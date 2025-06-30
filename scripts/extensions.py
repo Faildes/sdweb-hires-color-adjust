@@ -67,6 +67,8 @@ class Script(scripts.Script):
             'middle': list(args[5:10]),
             'highlight': list(args[10:15])
         }
+        p.extra_generation_params = getattr(p, 'extra_generation_params', {})
+        p.extra_generation_params['Hires Color Adjust'] = adjust
         # Apply to initial images before hi-res fix
         new_images = []
         for img in p.init_images:
